@@ -8,6 +8,6 @@
 </ol>
 
 <h1>Admin<h1>
-  rollno:admin
-  password:admin
- nb:check the users table for users passwords
+  <p>rollno:admin</p>
+  <p>password:admin</p>
+ <h3>nb:check the users table for users passwords</h3>
