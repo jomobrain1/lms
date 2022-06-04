@@ -2,7 +2,7 @@
 
 <ol>
 <li>Add the lms folder to htdocs in Xampp</li>
-<li>create lms folder</li>
+<li>create lms folder and lms database</li>
 <li>import lms.sql which is in database folder in out project</li>
 <li>go to : <b><a>http://localhost/lms</a></b></li>
 </ol>
