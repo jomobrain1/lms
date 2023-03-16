@@ -80,7 +80,7 @@ if ($_SESSION['RollNo']) {
                             <div class="module-body">
                         <?php
                             $x=$_GET['id'];
-                            $sql="select * from LMS.book where BookId='$x'";
+                            $sql="select * from $lmsdb.book where BookId='$x'";
                             $result=$conn->query($sql);
                             $row=$result->fetch_assoc();    
                             
@@ -91,7 +91,7 @@ if ($_SESSION['RollNo']) {
                                 $avail=$row['Availability'];
                                 echo "<b>Book ID:</b> ".$bookid."<br><br>";
                                 echo "<b>Title:</b> ".$name."<br><br>";
-                                $sql1="select * from LMS.author where BookId='$bookid'";
+                                $sql1="select * from $lmsdb.author where BookId='$bookid'";
                                 $result=$conn->query($sql1);
                                 
                                 echo "<b>Author:</b> ";

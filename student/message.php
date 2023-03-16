@@ -80,7 +80,7 @@ if ($_SESSION['RollNo']) {
                                   <tbody>
                                     <?php
                                     $rollno=$_SESSION['RollNo'];
-                            $sql="select * from LMS.message where RollNo='$rollno' order by Date DESC,Time DESC";
+                            $sql="select * from $lmsdb.message where RollNo='$rollno' order by Date DESC,Time DESC";
                             $result=$conn->query($sql);
                             while($row=$result->fetch_assoc())
                             {

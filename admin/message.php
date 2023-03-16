@@ -136,7 +136,7 @@ if(isset($_POST['submit']))
     $rollno=$_POST['RollNo'];
     $message=$_POST['Message'];
 
-$sql1="insert into LMS.message (RollNo,Msg,Date,Time) values ('$rollno','$message',curdate(),curtime())";
+$sql1="insert into $lmsdb.message (RollNo,Msg,Date,Time) values ('$rollno','$message',curdate(),curtime())";
 
 if($conn->query($sql1) === TRUE){
 echo "<script type='text/javascript'>alert('Success')</script>";

@@ -168,20 +168,20 @@ if(isset($_POST['submit']))
     $year=$_POST['year'];
     $availability=$_POST['availability'];
 
-$sql1="insert into LMS.book (Title,Publisher,Year,Availability) values ('$title','$publisher','$year','$availability')";
+$sql1="insert into $lmsdb.book (Title,Publisher,Year,Availability) values ('$title','$publisher','$year','$availability')";
 
 if($conn->query($sql1) === TRUE){
-$sql2="select max(BookId) as x from LMS.book";
+$sql2="select max(BookId) as x from $lmsdb.book";
 $result=$conn->query($sql2);
 $row=$result->fetch_assoc();
 $x=$row['x'];
-$sql3="insert into LMS.author values ('$x','$author1')";
+$sql3="insert into $lmsdb.author values ('$x','$author1')";
 $result=$conn->query($sql3);
 if(!empty($author2))
-{ $sql4="insert into LMS.author values('$x','$author2')";
+{ $sql4="insert into $lmsdb.author values('$x','$author2')";
   $result=$conn->query($sql4);}
 if(!empty($author3))
-{ $sql5="insert into LMS.author values('$x','$author3')";
+{ $sql5="insert into $lmsdb.author values('$x','$author3')";
   $result=$conn->query($sql5);}
 
 echo "<script type='text/javascript'>alert('Success')</script>";

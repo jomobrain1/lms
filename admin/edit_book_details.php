@@ -83,7 +83,7 @@ if ($_SESSION['RollNo']) {
 
                                 <?php
                                     $bookid = $_GET['id'];
-                                    $sql = "select * from LMS.book where Bookid='$bookid'";
+                                    $sql = "select * from $lmsdb.book where Bookid='$bookid'";
                                     $result=$conn->query($sql);
                                     $row=$result->fetch_assoc();
                                     $name=$row['Title'];
@@ -168,7 +168,7 @@ if(isset($_POST['submit']))
     $year=$_POST['Year'];
     $avail=$_POST['Availability'];
 
-$sql1="update LMS.book set Title='$name', Publisher='$publisher', Year='$year', Availability='$avail' where BookId='$bookid'";
+$sql1="update $lmsdb.book set Title='$name', Publisher='$publisher', Year='$year', Availability='$avail' where BookId='$bookid'";
 
 
 

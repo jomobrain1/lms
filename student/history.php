@@ -85,11 +85,11 @@ if ($_SESSION['RollNo']) {
                                     $rollno = $_SESSION['RollNo'];
                                     if(isset($_POST['submit']))
                                         {$s=$_POST['title'];
-                                            $sql="select * from LMS.record,LMS.book where RollNo = '$rollno' and Date_of_Issue is NOT NULL and Date_of_Return is NOT NULL and book.Bookid = record.BookId and (record.BookId='$s' or Title like '%$s%')";
+                                            $sql="select * from $lmsdb.record,$lmsdb.book where RollNo = '$rollno' and Date_of_Issue is NOT NULL and Date_of_Return is NOT NULL and book.Bookid = record.BookId and (record.BookId='$s' or Title like '%$s%')";
 
                                         }
                                     else
-                                        $sql="select * from LMS.record,LMS.book where RollNo = '$rollno' and Date_of_Issue is NOT NULL and Date_of_Return is NOT NULL and book.Bookid = record.BookId";
+                                        $sql="select * from $lmsdb.record,$lmsdb.book where RollNo = '$rollno' and Date_of_Issue is NOT NULL and Date_of_Return is NOT NULL and book.Bookid = record.BookId";
 
                                     $result=$conn->query($sql);
                                     $rowcount=mysqli_num_rows($result);

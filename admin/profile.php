@@ -84,7 +84,7 @@ if ($_SESSION['RollNo']) {
 
                                 <?php
                                 $rollno = $_SESSION['RollNo'];
-                                $sql="select * from LMS.user where RollNo='$rollno'";
+                                $sql="select * from $lmsdb.user where RollNo='$rollno'";
                                 $result=$conn->query($sql);
                                 $row=$result->fetch_assoc();
 
@@ -165,7 +165,7 @@ if(isset($_POST['submit']))
     $mobno=$_POST['MobNo'];
     $pswd=$_POST['Password'];
 
-$sql1="update LMS.user set Name='$name', EmailId='$email', MobNo='$mobno', Password='$pswd' where RollNo='$rollno'";
+$sql1="update $lmsdb.user set Name='$name', EmailId='$email', MobNo='$mobno', Password='$pswd' where RollNo='$rollno'";
 
 
 

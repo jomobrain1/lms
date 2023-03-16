@@ -84,7 +84,7 @@ if ($_SESSION['RollNo']) {
                                   </thead>
                                   <tbody>
                                     <?php
-                            $sql="select * from LMS.recommendations";
+                            $sql="select * from $lmsdb.recommendations";
                             $result=$conn->query($sql);
                             while($row=$result->fetch_assoc())
                             {

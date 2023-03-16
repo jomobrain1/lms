@@ -90,7 +90,7 @@ if ($_SESSION['RollNo']) {
                                   </thead>
                                   <tbody>
                                     <?php
-                            $sql="select * from LMS.record,LMS.book,LMS.renew where renew.BookId=book.BookId and renew.RollNo=record.RollNo and renew.BookId=record.BookId";
+                            $sql="select * from $lmsdb.record,$lmsdb.book,$lmsdb.renew where renew.BookId=book.BookId and renew.RollNo=record.RollNo and renew.BookId=record.BookId";
                             $result=$conn->query($sql);
                             while($row=$result->fetch_assoc())
                             {

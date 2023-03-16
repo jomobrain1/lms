@@ -19,7 +19,16 @@ require('dbconn.php');
 	<!-- //Meta-Tags -->
 
 	<!-- Style --> <link rel="stylesheet" href="css/style.css" type="text/css" media="all">
-
+<style>
+	.password{
+		background: #fff;
+		padding: 10px 30px;
+		
+	}
+	.password h2{
+		color: #000;
+	}
+</style>
 	<!-- Fonts -->
 		<link href="//fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
 	<!-- //Fonts -->
@@ -33,7 +42,10 @@ require('dbconn.php');
 	<h1>LIBRARY MANAGEMENT SYSTEM</h1>
 
 	<div class="container">
-
+     <!-- <div class="password">
+	 <h2>rollno:admin</h2>
+	 <h2>password: admin</h2>
+	 </div> -->
 		<div class="login">
 			<h2>Sign In</h2>
 			<form action="index.php" method="post">
@@ -92,7 +104,7 @@ if(isset($_POST['signin']))
  $p=$_POST['Password'];
  $c=$_POST['Category'];
 
- $sql="select * from LMS.user where RollNo='$u'";
+ $sql="select * from $lmsdb.user where RollNo='$u'";
 
  $result = $conn->query($sql);
 $row = $result->fetch_assoc();
@@ -126,7 +138,7 @@ if(isset($_POST['signup']))
 	$category=$_POST['Category'];
 	$type='Student';
 
-	$sql="insert into LMS.user (Name,Type,Category,RollNo,EmailId,MobNo,Password) values ('$name','$type','$category','$rollno','$email','$mobno','$password')";
+	$sql="insert into $lmsdb.user (Name,Type,Category,RollNo,EmailId,MobNo,Password) values ('$name','$type','$category','$rollno','$email','$mobno','$password')";
 
 	if ($conn->query($sql) === TRUE) {
 echo "<script type='text/javascript'>alert('Registration Successful')</script>";

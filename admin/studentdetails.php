@@ -83,7 +83,7 @@ if ($_SESSION['RollNo']) {
                             <div class="module-body">
                         <?php
                             $rno=$_GET['id'];
-                            $sql="select * from LMS.user where RollNo='$rno'";
+                            $sql="select * from $lmsdb.user where RollNo='$rno'";
                             $result=$conn->query($sql);
                             $row=$result->fetch_assoc();    
                             

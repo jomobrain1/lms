@@ -87,10 +87,10 @@ if ($_SESSION['RollNo']) {
                                     <?php
                                     if(isset($_POST['submit']))
                                         {$s=$_POST['title'];
-                                            $sql="select * from LMS.user where (RollNo='$s' or Name like '%$s%') and RollNo<>'ADMIN'";
+                                            $sql="select * from $lmsdb.user where (RollNo='$s' or Name like '%$s%') and RollNo<>'ADMIN'";
                                         }
                                     else
-                                        $sql="select * from LMS.user where RollNo<>'ADMIN'";
+                                        $sql="select * from $lmsdb.user where RollNo<>'ADMIN'";
 
                                     $result=$conn->query($sql);
                                     $rowcount=mysqli_num_rows($result);

@@ -83,10 +83,10 @@ if ($_SESSION['RollNo']) {
                                     <?php
                                     if(isset($_POST['submit']))
                                         {$s=$_POST['title'];
-                                            $sql="select * from LMS.book where BookId='$s' or Title like '%$s%'";
+                                            $sql="select * from $lmsdb.book where BookId='$s' or Title like '%$s%'";
                                         }
                                     else
-                                        $sql="select * from LMS.book order by Availability DESC";
+                                        $sql="select * from $lmsdb.book order by Availability DESC";
 
                                     $result=$conn->query($sql);
                                     $rowcount=mysqli_num_rows($result);
